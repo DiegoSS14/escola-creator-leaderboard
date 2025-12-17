@@ -1,6 +1,6 @@
 import { MdLogin, MdLogout } from "react-icons/md"
 
-export default function SideBar() {
+export default function FooterBar() {
     return (
         <div className="sticky bottom-0 w-full flex justify-center items-center bg-primary p-4">
             <div className="flex flex-col w-full gap-4 items-center justify-start max-w-4xl sm:flex-row sm:justify-between">

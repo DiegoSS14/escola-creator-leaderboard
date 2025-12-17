@@ -1,8 +1,10 @@
+'use client'
 import ButtonMenu from "@/components/button-menu";
 import CardOthers from "@/components/card-others/CardOthers";
 import CardTop from "@/components/card-top";
+import LoginModal from "@/components/login-modal/LoginModal";
 import NavBar from "@/components/nav-bar";
-import SideBar from "@/components/side-bar/SideBar";
+import FooterBar from "@/components/footer-bar/FooterBar";
 
 export default function Home() {
   return (
@@ -74,10 +76,18 @@ export default function Home() {
               position={86}
               value={12345}
             />
+            <CardOthers
+              name="Maria Silva"
+              image="https://img.freepik.com/fotos-gratis/pessoa-de-origem-indiana-se-divertindo_23-2150285283.jpg?semt=ais_hybrid&w=740&q=80"
+              username="@mariasilva"
+              position={86}
+              value={12345}
+            />
           </article>
         </div>
       </section>
-      <SideBar/>
+      <FooterBar />
+      {/* <LoginModal /> */}
     </div>
   );
 }

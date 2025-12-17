@@ -5,11 +5,16 @@ import { CardOthersProps } from "../card-top/interfaces/CardProps"
 export default function CardOthers({ name, image, position, username, value }: CardOthersProps) {
   return (
     <div className="
-    flex 
-    items-center 
+    relative
+    w-full
+    flex
+    flex-col
+    md:flex-row
+    items-center
     gap-6 
-    outline-1 
-    p-4 
+    outline-1
+    p-6 
+    md:p-4
     rounded-lg 
     outline-zinc-200
     transition-colors
@@ -17,24 +22,26 @@ export default function CardOthers({ name, image, position, username, value }: C
     hover:outline-primary
     cursor-pointer
     ">
-      <h1 className="text-3xl font-bold text-primary">#{position}</h1>
-      <div className="w-full flex items-center gap-4">
-        <img
-          src={image}
-          alt=""
-          className="
+      <div className="w-full flex items-center gap-6">
+        <h1 className="absolute md:relative text-right md:text-left right-6 top-6 md:right-0 md:top-0 w-30 text-4xl md:text-3xl font-bold text-primary">#{position}</h1>
+        <div className="w-full flex flex-col justify-center items-start md:flex-row md:items-center md:justify-start gap-4">
+          <img
+            src={image}
+            alt=""
+            className="
                   h-14 w-14
                   rounded-full 
                   object-cover
                 bg-gray-400
                   "
-        />
-        <div className="flex flex-col">
-          <h1 className="text-lg font-bold text-zinc-950">{name}</h1>
-          <span className="text-[14px] text-zinc-600">{username}</span>
+          />
+          <div className="flex flex-col">
+            <h1 className="text-lg font-bold text-zinc-950">{name}</h1>
+            <span className="text-[14px] text-zinc-600">{username}</span>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col w-full items-end">
+      <div className="w-full flex flex-col-reverse items:start md:justify-center md:gap-0 md:flex-col md:items-end">
         <h1 className="text-[26px] font-bold text-primary transition-all hover:scale-105">
           {formatValue.format(value)}
         </h1>
