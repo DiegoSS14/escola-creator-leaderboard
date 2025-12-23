@@ -1,10 +1,10 @@
 'use client'
 
 import { FaMedal, FaTrophy, FaCrown } from "react-icons/fa"
-import { CardTopProps } from "./interfaces/CardProps"
+import { UserNiProps } from "./interfaces/CardProps"
 import { formatValue } from "@/utilities/FormatValue"
 
-export default function CardTop(props: CardTopProps) {
+export default function CardTop(props: UserNiProps) {
 
     return (
         <div className={`

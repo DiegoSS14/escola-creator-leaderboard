@@ -1,8 +1,8 @@
 import { formatValue } from "@/utilities/FormatValue"
-import { CardOthersProps } from "../card-top/interfaces/CardProps"
+import { UserProps } from "../card-top/interfaces/CardProps"
 
 
-export default function CardOthers({ name, image, position, username, value }: CardOthersProps) {
+export default function CardOthers({ name, image, position, username, value }: UserProps) {
   return (
     <div className="
     relative

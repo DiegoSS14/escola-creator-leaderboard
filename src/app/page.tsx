@@ -2,11 +2,12 @@
 import ButtonMenu from "@/components/button-menu";
 import CardOthers from "@/components/card-others/CardOthers";
 import CardTop from "@/components/card-top";
-import LoginModal from "@/components/login-modal/LoginModal";
-import NavBar from "@/components/nav-bar";
 import FooterBar from "@/components/footer-bar/FooterBar";
+import NavBar from "@/components/nav-bar";
+import LoginModal from "@/components/login-modal/LoginModal";
 
 export default function Home() {
+
   return (
     <div className="flex flex-col min-h-screen items-start">
       <NavBar />
@@ -87,7 +88,7 @@ export default function Home() {
         </div>
       </section>
       <FooterBar />
-      {/* <LoginModal /> */}
+      <LoginModal />
     </div>
   );
 }
