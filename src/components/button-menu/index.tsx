@@ -1,19 +1,12 @@
 'use client'
-import { useState } from "react";
 import ButtonMenuProps from "./interfaces/ButtonMenuProps";
 
-export default function ButtonMenu({ text }: ButtonMenuProps) {
-    const [active, setActive] = useState<boolean>(false)
-
-    function handleActive() {
-        console.log("teste")
-        setActive(!active)
-    }
+export default function ButtonMenu({ text, active, onClick }: ButtonMenuProps) {
 
     return (
-        <button 
-        onClick={() => { handleActive() }} 
-        className={`
+        <button
+            onClick={onClick}
+            className={`
         w-full
         max-w-60
         md:w-fit

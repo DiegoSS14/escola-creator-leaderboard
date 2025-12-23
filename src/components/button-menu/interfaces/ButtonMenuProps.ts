@@ -1,3 +1,5 @@
 export default interface ButtonMenuProps {
-    text: string
+    text: string,
+    active: boolean,
+    onClick?: () => void
 }

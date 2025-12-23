@@ -5,23 +5,42 @@ import InputForm from "../input-form/InputForm";
 import { types } from "../input-form/interfaces/InputFormProps";
 
 import { useDispatch, useSelector } from "react-redux";
-import { logIn } from "@/store/auth/authSlice";
+import { alternModal, logIn } from "@/store/auth/authSlice";
+import { login } from "@/lib/service/auth.service";
 
 export default function LoginModal() {
     const [inputEmail, setInputEmail] = useState("")
     const [inputPassword, setInputPassword] = useState("")
 
-    const [opened, setOpened] = useState(false)
     const { auth } = useSelector((state: any) => state)
     const dispatch = useDispatch()
 
-    function handleLogin(e: FormEvent) {
+    async function handleLogin(e: FormEvent) {
         e.preventDefault()
 
-        dispatch(logIn({
-            email: inputEmail,
-            password: inputPassword
-        }))
+        if(inputEmail === "") {
+            return alert("Digite seu e-mail")
+        }
+        if(inputPassword === "") {
+            return alert("Digite sua senha")
+        }
+
+        const email = inputEmail
+        const password = inputPassword
+
+        const user = await login({email, password})
+
+        if (!user) {
+            return alert("email ou senha incorretos")
+        }
+
+        dispatch(logIn(user))
+        handleCloseModal()
+        console.log(auth.user)
+    }
+
+    function handleCloseModal() {
+        dispatch(alternModal(false))
     }
 
     return (
@@ -43,7 +62,8 @@ export default function LoginModal() {
             >
                 <IoClose
                     size={20}
-                    className="absolute top-3 right-3"
+                    className="absolute top-3 right-3 cursor-pointer"
+                    onClick={() => { handleCloseModal() }}
                 />
                 <InputForm
                     title="Email"
