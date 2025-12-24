@@ -21,7 +21,6 @@ export default function Home() {
       setUsersRankingGeneral([])
       return
     }
-
     const filteredGeneral = takeUsersRanking.filter(user => user.position > 3)
     setUsersRankingGeneral(filteredGeneral)
 
@@ -29,9 +28,7 @@ export default function Home() {
     const filteredTop: UserProps[] = topOrder
       .map(p => takeUsersRanking.find(user => user.position === p))
       .filter(item => item)
-
     setUsersRankingTop(filteredTop)
-
   }, [takeUsersRanking])
 
   return (
@@ -56,36 +53,6 @@ export default function Home() {
                 salesCount={user.salesCount}
               />
             ))}
-            {/* <CardTop
-              userId={80}
-              key={80}
-              name="Maria Silva"
-              avatarUrl="https://img.freepik.com/fotos-gratis/pessoa-de-origem-indiana-se-divertindo_23-2150285283.jpg?semt=ais_hybrid&w=740&q=80"
-              position={2}
-              revenue={12345}
-              isCurrentUser={false}
-              salesCount={30}
-            />
-            <CardTop
-              userId={20}
-              key={20}
-              name="Maria Silva"
-              avatarUrl="https://img.freepik.com/fotos-gratis/pessoa-de-origem-indiana-se-divertindo_23-2150285283.jpg?semt=ais_hybrid&w=740&q=80"
-              position={1}
-              revenue={12345}
-              isCurrentUser={false}
-              salesCount={30}
-            />
-            <CardTop
-              userId={12}
-              key={12}
-              name="Maria Silva"
-              avatarUrl="https://img.freepik.com/fotos-gratis/pessoa-de-origem-indiana-se-divertindo_23-2150285283.jpg?semt=ais_hybrid&w=740&q=80"
-              position={3}
-              revenue={12345}
-              isCurrentUser={false}
-              salesCount={30}
-            /> */}
           </article>
         </div>
       </section>
