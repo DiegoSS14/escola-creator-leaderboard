@@ -31,10 +31,12 @@ export default function MenuRanking() {
     }, [active]);
 
     return (
-        <div className="flex flex-col md:flex-row w-full max-w-4xl mx-auto items-center justify-center gap-2 md:gap-4">
-            <ButtonMenu text="Ranking All-time" active={active === 1} onClick={() => setActive(1)} />
-            <ButtonMenu text="Ranking Semanal" active={active === 2} onClick={() => setActive(2)} />
-            <ButtonMenu text="Ranking Mensal" active={active === 3} onClick={() => setActive(3)} />
-        </div>
+        <section className="flex flex-col w-full px-10 py-4 h-fit justify-center">
+            <div className="flex flex-col md:flex-row w-full max-w-4xl mx-auto items-center justify-center gap-2 md:gap-4">
+                <ButtonMenu text="Ranking All-time" active={active === 1} onClick={() => setActive(1)} />
+                <ButtonMenu text="Ranking Semanal" active={active === 2} onClick={() => setActive(2)} />
+                <ButtonMenu text="Ranking Mensal" active={active === 3} onClick={() => setActive(3)} />
+            </div>
+        </section>
     );
 }
