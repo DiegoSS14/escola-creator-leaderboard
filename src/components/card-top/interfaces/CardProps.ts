@@ -1,8 +1,0 @@
-export interface UserNiProps {
-    userId: number,
-    name: string,
-    revenue: number,
-    salesCount: number,
-    position: number,
-    isCurrentUser: boolean
-}

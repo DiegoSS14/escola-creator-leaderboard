@@ -2,14 +2,19 @@ import { alternModal } from "@/store/auth/authSlice"
 import { formatValue } from "@/utilities/FormatValue"
 import { MdLogin, MdLogout } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
+import { logOut } from "@/store/auth/authSlice"
 
 export default function FooterBar() {
 
     const dispatch = useDispatch()
     const user = useSelector((state: any) => state.auth.user)
 
-    function handleClick() {
+    function handleLogin() {
         dispatch(alternModal(true))
+    }
+
+    function handleLogOut() {
+        dispatch(logOut())
     }
 
     return (
@@ -43,7 +48,7 @@ export default function FooterBar() {
                         hover:scale-102
                         cursor-pointer
                         "
-                        onClick={(e) => { handleClick() }}
+                        onClick={(e) => { handleLogin() }}
                     >
                         <MdLogin
                             size={24}
@@ -99,7 +104,7 @@ export default function FooterBar() {
                         hover:scale-102
                         cursor-pointer
                         "
-                        onClick={(e) => { handleClick() }}
+                        onClick={(e) => { handleLogOut() }}
                     >
                         <MdLogout
                             size={24}

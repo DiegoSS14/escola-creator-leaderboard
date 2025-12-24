@@ -8,6 +8,7 @@ export default function CardTop({ name, avatarUrl, position, revenue }: UserProp
 
     return (
         <div className={`
+        relative
         flex 
         flex-col
         w-full
@@ -42,6 +43,20 @@ export default function CardTop({ name, avatarUrl, position, revenue }: UserProp
                     {formatValue.format(revenue)}
                 </h1>
                 <span className="text-[12px] text-white opacity-50">Faturamento</span>
+            </div>
+            <div className={`
+                absolute 
+                top-0 
+                left-4 
+                w-16 
+                h-16 
+                flex 
+                items-center 
+                justify-center 
+                ${position === 1 ? "bg-white" : "bg-gray-400"}
+                rounded-b-lg
+                `}>
+                <h1 className={`text-[28px] font-bold ${position === 1 ? "text-amber-400" : "text-white"}`}>#{position}</h1>
             </div>
         </div>
     )
